@@ -1,0 +1,16 @@
+{
+  "_note": "DEMONSTRATION ASSUMPTIONS. These thresholds are not validated agronomic values for any crop or region. Replace with locally verified values before real-world use.",
+  "weather": { "dry_day_mm": 1.0, "observed_window_days": 14, "forecast_window_days": 7 },
+  "dry_spell": { "min_observed_days": 10, "moderate_days": 6, "high_days": 10, "max_observation_age_days": 2 },
+  "heavy_rainfall": { "min_forecast_days": 3, "moderate_mm": 50, "high_mm": 100 },
+  "heat_stress": {
+    "min_forecast_days": 3,
+    "default": { "moderate_c": 38, "high_c": 42 },
+    "crops": {
+      "wheat": { "moderate_c": 35, "high_c": 38, "sensitive_stages": ["flowering", "grain_filling"], "sensitive_offset_c": 2 },
+      "rice": { "moderate_c": 36, "high_c": 39, "sensitive_stages": ["flowering"], "sensitive_offset_c": 2 }
+    }
+  },
+  "soil_moisture": { "max_age_days": 7, "moderate_below_pct": 20, "high_below_pct": 12 },
+  "freshness": { "market_stale_after_days": 7, "weather_cache_ttl_minutes": 30 }
+}
